@@ -1,3 +1,4 @@
+/// An iterator that splits a number n to triplets of 3 digits starting from least significant
 pub struct Tripletizer {
     n: i32,
 }

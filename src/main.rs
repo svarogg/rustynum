@@ -5,10 +5,6 @@ use std::io;
 use std::io::BufRead;
 
 fn main() {
-    main_loop();
-}
-
-fn main_loop() {
     let stdin = io::stdin();
 
     for line in stdin.lock().lines() {
@@ -20,7 +16,7 @@ fn main_loop() {
 
         match result {
             Ok(result) => println!("{}", result),
-            Err(_) => println!("This is not a number!"),
+            Err(_) => println!("This is not a number or doesn't fit into i32!"),
         }
     }
 }
