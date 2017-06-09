@@ -1,3 +1,5 @@
+use super::tripletizer::Tripletizer;
+
 const SIZES: &'static [&'static str] = &["", "thousand", "million", "billion", "trillion"];
 
 fn parse_sign(n: i32) -> String {
@@ -5,21 +7,8 @@ fn parse_sign(n: i32) -> String {
 }
 
 fn parse_num(n: i32) -> String {
-    fn split_triplets(n: i32) -> Vec<i32> {
-        let mut triplets = Vec::new();
-        let mut n = n;
-
-        while n > 0 {
-            triplets.push(n % 1000);
-            n = n / 1000;
-        }
-
-        return triplets;
-    }
-
-    let triplets = split_triplets(n);
+    let triplets = Tripletizer::new(n);
     return triplets
-               .iter()
                .map(|x| x.to_string())
                .collect::<Vec<_>>()
                .join(",");

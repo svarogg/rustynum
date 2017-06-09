@@ -1,4 +1,5 @@
 mod logic;
+mod tripletizer;
 
 use std::io;
 use std::io::BufRead;
