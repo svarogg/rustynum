@@ -30,7 +30,7 @@ fn parse_atomic(n: i32) -> Option<String> {
         19 => Some("nineteen".to_string()),
         20 => Some("twenty".to_string()),
         30 => Some("thirty".to_string()),
-        40 => Some("fourty".to_string()),
+        40 => Some("forty".to_string()),
         50 => Some("fifty".to_string()),
         60 => Some("sixty".to_string()),
         70 => Some("seventy".to_string()),
@@ -108,5 +108,7 @@ mod tests {
         assert_eq!("one million, one thousand", num_to_string(1001000));
         assert_eq!("minus one million, three hundred fifty five thousand, eight hundred twenty three",
                    num_to_string(-1355823));
+        assert_eq!("two billion, one hundred forty seven million, four hundred eighty three thousand, six hundred forty seven",
+                   num_to_string(2147483647))
     }
 }
